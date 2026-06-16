@@ -1,0 +1,404 @@
+body{
+    font-family:  monospace;
+    margin: 20px 20em;
+    background-color: rgb(250, 248, 243);
+}
+
+#navBar {
+    background-color: rgb(247, 238, 222);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0  1px 5px gray;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#navBar > ul {
+    /* font-weight: normal; */
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 18px;
+}
+
+li {
+    background-color: rgb(214, 178, 148);
+    padding: 10px;
+    border-radius: 9px;
+}
+
+li:hover {
+    background-color: rgb(143, 112, 88);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+
+}
+
+#infoDashboard, .formContainer{
+    background-color: rgb(247, 238, 222);
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    box-shadow: 0  1px 5px gray;
+    padding: 60px 100px 40px; 
+    margin-top: 20px;
+}
+
+#heading {
+    max-width: 40em;
+    text-align: center;
+}
+
+#heading > p {
+    margin: 60px 20px;
+    text-align: justify;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+#heading > h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+#valueInfo {
+    display: grid;
+    grid-template-columns: 12em;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0  1px 5px gray;
+    padding: 20px 10px 10px;
+    background-color: rgb(219, 218, 217);
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.box > p {
+    margin: 10px 6px;
+    font-weight: normal;
+}
+
+.deletePrd, .deleteCat {
+    background-color: rgb(247, 238, 222);
+    border: 3px solid rgb(161, 5, 5);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: monospace;
+    margin: 5px 5px;
+    padding: 5px 10px;
+    color: rgb(161, 5, 5);
+}
+
+
+.deletePrd:hover, .deleteCat:hover {
+    background-color: rgb(161, 5, 5);
+    color: white;
+    cursor: pointer;
+}
+
+.editPrd, .editCat, #submitBtn {
+    background-color: rgb(247, 238, 222);
+    border: 3px solid rgb(77, 49, 7);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: monospace;
+    margin: 5px 5px;
+    padding: 5px 10px;
+}
+
+.addItem {
+    background-color: rgb(77, 49, 7);
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: monospace;
+    margin: 5px 5px;
+    padding: 10px 15px;
+    color: white;
+}
+
+.addItem:hover, .editPrd:hover, .editCat:hover, #submitBtn:hover {
+    background-color: rgb(143, 112, 88);
+    cursor: pointer;
+    color: white;    
+}
+
+#cancelBtn {
+    background-color: rgb(247, 238, 222);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: monospace;
+    margin: 5px 5px;
+    padding: 10px 15px;
+    border: 3px solid rgb(99, 98, 98);
+    a {
+        color: rgb(66, 66, 66);
+    }
+}
+
+#cancelBtn:hover {
+    background-color: rgb(99, 98, 98);
+    cursor: pointer;
+    a {
+        color: white;
+    }
+}
+
+.table {
+    background-color: rgb(247, 238, 222);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    box-shadow: 0  1px 5px gray;
+    padding: 15px 200px 40px; 
+    margin-top: 20px;
+}
+
+.table > h1 {
+    margin: 0px 0px 30px;
+}
+
+.table > h2 {
+    margin: 30px 0px 0px;
+}
+
+
+.allProducts {
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0  1px 5px gray;
+    overflow: hidden;
+}
+
+th {
+    padding: 15px 10px;
+    font-size: 18px;
+    background-color: rgb(77, 49, 7);
+    color: white;
+}
+
+.hdCatName, .hdName {
+    text-align: left;
+}
+
+.valQuantity, .valUnitPrice, .valValue, .buttons {
+    text-align: center;
+}
+
+.valCatName, .valName {
+    padding-left: 20px;
+}
+
+.buttons {
+    padding-right: 15px;
+}
+
+td {
+    border-bottom: 1px solid gray;
+    padding: 5px 0px;
+    font-size: 15px;
+}
+
+#categoryPage {
+    background-color: rgb(247, 238, 222);
+    box-shadow: 0  1px 5px gray;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+#categoryList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 360px);
+    justify-content: center;
+    padding: 10px 40px;
+    gap: 20px;
+}
+
+.categoryCard {
+    background-color: rgb(250, 248, 243);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0  1px 5px gray;
+    border-radius: 10px;
+}
+
+.categoryCard:hover {
+    cursor: pointer;
+    box-shadow: 0  1px 10px rgb(128, 61, 6);
+    transform: scale(1.05, 1.05);
+}
+
+.catHeaders{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.catHeaders > p {
+    margin: 5px 0px 40px 0px;
+    font-style: italic;
+}
+
+.dataNb {
+    display: flex;
+    gap: 20px;
+}
+
+.nbItems, .totQty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px 10px;
+}
+
+.nbItems > p, .totQty > p {
+    margin: 5px 0 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.catBtns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.addCategory {
+    background-color: rgb(77, 49, 7);
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: monospace;
+    margin: 5px 5px;
+    padding: 10px 15px;
+    color: white;
+    align-self: center;
+}
+
+#anchorAddCat {
+    align-self: center;
+}
+
+.addCategory:hover {
+    background-color: rgb(143, 112, 88);
+    cursor: pointer;
+    a {
+        color: white;
+    }
+}
+
+.formContainer {
+    padding: 60px 250px 40px;
+    align-self: center;
+}
+
+.form{
+    background-color: rgb(250, 248, 243);
+    padding: 25px 40px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0  1px 5px gray;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.form > h1 {
+    margin: 10px 60px;
+    text-align: center;
+}
+
+.formDelete {
+    background-color: rgb(250, 248, 243);
+    padding: 25px 60px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0  1px 5px gray;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.formDelete > h1 {
+    margin: 0;
+    padding: 10px 0px
+}
+
+.inputs, .buttonForm {
+    display: flex;
+    gap: 30px;
+    margin: 10px;
+}
+
+.input, label > input {
+    height: 20px;
+    border: 3px solid rgb(77, 49, 7);
+    border-radius: 5px;
+    background-color: rgb(250, 248, 243);
+    padding: 5px;
+    margin-top: 5px;
+}
+
+select {
+    height: 35px;
+    width: 200px;
+    border: 3px solid rgb(77, 49, 7);
+    border-radius: 5px;
+    background-color: rgb(250, 248, 243);
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+label {
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.dataInsert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.warning {
+    line-height: 20px;
+    margin: 0px 20px;
+    text-align: center;
+}
+
+.infoCategory > h3 {
+    font-weight: normal;
+}
+

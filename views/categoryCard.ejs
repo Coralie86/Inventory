@@ -1,0 +1,27 @@
+<div class="categoryCard" >
+    <a href="/categories/<%= category.id %>">
+    <div class="catHeaders">
+        <!-- <h1><a href="/categories/<%= category.id %>"><%= category.name %></a></h1> -->
+         <h1><%= category.name %></h1>
+        <p><%= category.description %></p>        
+    </div> 
+    <div class="dataNb">
+        <div class="nbItems">
+            <p>Number of items :</p>
+            <p><%= category.nb_items %></p>
+        </div>
+        <div class="totQty">
+            <p>Total Quantity :</p>
+            <p><%= category.total_qt %></p>
+        </div>
+    </div>
+    <div class="catBtns">
+        <a href="/categories/<%= category.id%>/edit?parentId=<%=parentId%>">
+            <button class="editCat" type="button">Edit</button>
+        </a>
+        <a href="/categories/<%= category.id %>/delete?parentId=<%=parentId%>">
+            <button class="deleteCat" type="button">Delete</button>
+        </a>
+    </div>
+    </a>
+</div>

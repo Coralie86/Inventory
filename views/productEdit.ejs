@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include(links.nav) %>
+    <div class="formContainer">
+        <form class="form" method="POST" action=<%=links.href%>>
+            <%- include("errors.ejs") %>
+            <h1>You are currently modifying: <%= product.name %></h1>
+            <div class="dataInsert">
+                <label for="categoryName">Parent Category
+                    <select name="categoryName" class="dropdown" defaultValue="<%=product.category_name %>" >
+                         <option value="<%=product.category_name %>"><%=product.category_name %></option>
+                        <% catList.forEach((category) => { %>
+                            <% if(category.name != product.category_name) {%>
+                                <option value="<%=category.name %>"><%= category.name%></option>
+                            <%} %>                            
+                        <% }); %>
+                    </select>
+                </label>
+                <div class="inputs">
+                    <label for="prdName">Product name
+                        <input name="prdName" type="text" value="<%= product.name %>" required>
+                    </label>
+                    <label for="quantity">Quantity
+                        <input name="quantity" type="number" value="<%= product.quantity %>" required>
+                    </label>
+                    <label for="unit_price">Price
+                        <input name="unit_price" type="number" value="<%= product.unit_price %>" step=".01" required>
+                    </label> 
+                </div>           
+            </div>
+            <div class="buttonForm">
+                <button id="submitBtn" type="submit">Submit</button>
+                <a href=<%=links.cancel%>><button id="cancelBtn" type="button">Cancel</button></a> 
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include('navigation') %>
+    <div class="formContainer">
+        <form class="formDelete" method="POST" action="/categories/<%= category.id%>/delete?parentId=<%= parentId %>">
+            <h1>Category to Delete: <%= category.name %></h1>
+            <div class="infoCategory">
+                <h2>Decription: <%= category.description %></h2>
+                <h3>Sub Category of: <%= category.sub_category_of %></h2>
+            </div>
+            <div class="warning">
+                Deleting a category will be completely removed from the database. 
+                If it contains products, those ones will be placed under <strong>Uncategorized card</strong>.
+            </div>
+            <div class="buttonForm">
+                <button class="deletePrd" type="submit">Delete</button>
+                <a href="/categories/<%= parentId %>"><button id="cancelBtn" type="button">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

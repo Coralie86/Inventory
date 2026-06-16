@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include('navigation') %>
+    <div id="infoDashboard">
+        <div id="heading">
+            <h1>Inventory Management</h1>
+            <p>Track categories and products. You can add new categories, new products, modify them and delete them.</p>
+            <p>You can delete a category containing products: those products will be stored under Uncategorized card.</p>
+        </div>
+        <div id="valueInfo">
+            <div class="box" id="nbProducts">Total Products: <p><%= info.nb_prod %></p></div>
+            <div class="box" id="nbCategory">Nb. Categories: <p><%= info.nb_cat %></p></div>
+            <div class="box" id="inStock">Total in Stock: <p><%= info.nb_stock %></p></div>
+            <div class="box" id="valueStock">Stock Value: <p><%= info.stock_value %> €</p></div>
+        </div>
+    </div>
+</body>
+</html>

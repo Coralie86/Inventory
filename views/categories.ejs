@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include('navigation') %>
+    <% if(locals.productList && locals.productList[1].length == 0 && locals.categories && locals.categories.length == 0) {%>    
+    <div>
+        <a href="/categories/new?categoryId=<%= parentId %>"><button type="button" class="addCategory">+ Add Category</button></a>
+        <a href="/categories/<%= parentId%>/add"><button type="button" class="addItem">Add Product</button></a>
+    </div>
+    <% }; %>
+
+    <% if(locals.categories && locals.categories.length > 0) {%>
+        <div id="categoryPage"> 
+            <a id="anchorAddCat" href="/categories/new?categoryId=<%= parentId %>"><button type="button" class="addCategory">+ Add Category</button></a>
+            <ul id="categoryList">                
+                <% categories.forEach((category) => { %>
+                    <%- include('categoryCard', {category: category, parentId: parentId}); %>
+                <% }); %>
+            </ul>
+        </div> 
+    <% }; %>
+
+    <% if(locals.productList && locals.productList[1] && locals.productList[1].length > 0) {%>
+        <%- include('productList', {productList: productList, categoryId: parentId}) %>
+    <% }; %>   
+</body>
+</html>

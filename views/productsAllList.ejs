@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include('navigation') %>
+    <div class="table">
+        <a href="/products/new" ><button type="button" class="addItem">+ Add Product</button></a>
+        <table class="allProducts">
+            <thead>
+                <tr>
+                    <th class="hdCatName">Category Name</th>
+                    <th class="hdName">Name</th>
+                    <th class="hdQuantity">Quantity</th>
+                    <th class="hdUnitPrice">Unit Price (€)</th>
+                    <th class="hdValue">Value (€)</th>
+                    <th class="hdAction">Actions</th>
+                </tr>
+            </thead>
+            <body>
+                <% productList.forEach(product => { %>
+                <tr>
+                    <td class="valCatName"><%= product.category_name %></td>
+                    <td class="valName"><%= product.name %></td>
+                    <td class="valQuantity"><%= product.quantity %></td>
+                    <td class="valUnitPrice"><%= product.unit_price %></td>
+                    <td class="valValue"><%= (product.quantity * product.unit_price).toFixed(2) %></td>
+                    <td class="buttons"><div>
+                        <a href="/products/<%=product.id%>/edit" ><button type="button" class="editPrd">Edit</button></a>
+                        <a href="/products/<%=product.id%>/delete" ><button type="button" class="deletePrd">Delete</button></a>
+                    </div></td>
+                </tr>
+                <% }); %>
+            </body>
+        </table>
+    </div>
+</body>

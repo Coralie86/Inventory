@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include('navigation') %>
+    <%- include("errors.ejs") %>
+    <div class="formContainer">
+        <form class="form" method="POST" action="/categories/<%= category.id%>/edit?parentId=<%=parentId%>">
+            <h1><%= category.name %></h1>
+            <label for="subCatOf">Parent Category
+                <select name="subCatOf" class="dropdown" >
+                    <option value="<%=category.sub_category_of %>"><%= category.sub_category_of%></option>
+                    <% catList.forEach((cat) => { %>
+                        <% if(cat.name != category.sub_category_of) {%>
+                            <option value="<%=cat.name %>"><%= cat.name%></option>
+                        <%}%>
+                    <% }); %>
+                </select>
+            </label> 
+            <div class="inputs">
+                <label for="catName">Category Name
+                    <input name="catName" type="text" value="<%= category.name %>" required>
+                </label>
+                <label for="catDescription">Category Description
+                    <input name="catDescription" type="text" value="<%= category.description %>" required>
+                </label>
+            </div>   
+            <div class="buttonForm">
+                <button id="submitBtn" type="submit">Save</button>
+                <a href="/categories/<%= parentId %>"><button id="cancelBtn" type="button">Cancel</button></a> 
+            </div>
+        </form>
+    </div>
+</body>
+</html>

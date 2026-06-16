@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include(links.nav) %>
+    <div class="formContainer">
+    <form class="formDelete" method="POST" action=<%= links.href%>>
+        <h2><%= product.category_name %></h2>
+        <h1>Product to delete: <%= product.name %></h1>
+        <div class="infoProduct">
+            <h3>Quantity: <%= product.quantity %></h3>
+            <h3>Unit Price: <%= product.unit_price %> €</h3>
+            <h3>Value: <%= (product.quantity * product.unit_price).toFixed(2) %> €</h3>
+        </div>
+        <div class="warning">
+            Deleting this product will remove it completely from the database.
+        </div>
+        <div class="buttonForm">
+            <button class="deletePrd" type="submit">Delete</button>
+            <a href=<%= links.cancel%>><button id="cancelBtn" type="button">Cancel</button></a>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

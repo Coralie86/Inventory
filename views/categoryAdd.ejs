@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <%- include('navigation') %>
+    <div class="formContainer">
+        <form class="form" method="POST" action="/categories/new?categoryId=<%= parentId %>">
+            <h1>Write the new category name and a description</h1>
+            <%- include("errors.ejs") %>
+            <div class="inputs">
+                <input class="input" name="catName" type="text" placeholder="Category Name" required>
+                <input class="input" name="catDescription" type="text" placeholder="Category Description" required>
+            </div>
+            <div class="buttonForm">
+                <button id="submitBtn" name="submit" type="submit">Submit</button>
+                <a href="/categories/<%= parentId %>"><button id="cancelBtn" type="button">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
