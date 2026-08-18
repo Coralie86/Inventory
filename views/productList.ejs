@@ -28,8 +28,10 @@
                     <td class="valUnitPrice"><%= product.unit_price %></td>
                     <td class="valValue"><%= (product.quantity * product.unit_price).toFixed(2) %></td>
                     <td class="buttons"><div>
-                        <a href="/categories/<%= categoryId%>/<%=product.id%>/edit" ><button type="button" class="editPrd">Edit</button></a>
-                        <a href="/categories/<%= categoryId%>/<%=product.id%>/delete" ><button type="button" class="deletePrd">Delete</button></a>
+                        <!-- <a href="/categories/<%= categoryId%>/<%=product.id%>/edit" ><button type="button" class="editPrd">Edit</button></a>
+                        <a href="/categories/<%= categoryId%>/<%=product.id%>/delete" ><button type="button" class="deletePrd">Delete</button></a> -->
+                        <a href="/categories/<%= categoryId%>/<%=product.id%>/edit" ><img src="/icons/edit.svg" class="editPrd" /></a>
+                        <a href="/categories/<%= categoryId%>/<%=product.id%>/delete" ><img src="/icons/delete.svg" class="deletePrd" /></a>
                     </div></td>
                 </tr>
                 <% }); %>

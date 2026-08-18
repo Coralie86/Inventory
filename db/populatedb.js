@@ -3,7 +3,7 @@ const {Client} = require("pg");
 
 const SQL = `
 DROP TABLE categories;
-DROP TABLE products;
+DROP TABLE products; 
 
 CREATE TABLE IF NOT EXISTS  categories (
     id  INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
