@@ -18,7 +18,7 @@ app.use(express.static(assetspath));
 app.use(express.urlencoded({extended: true}));
 
 // Set up PORT
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, (error) => {
     if (error) {
         throw error;
