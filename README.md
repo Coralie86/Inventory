@@ -12,7 +12,6 @@ The application allows users to manage categories and items through a simple web
 - Store inventory data in PostgreSQL
 - Server-side rendering with EJS
 - Form validation
-- Admin protection for destructive actions
 
 ## Technologies
 Node.js
