@@ -3,6 +3,8 @@
 An inventory management application built with Node.js, Express, PostgreSQL and EJS.
 The application allows users to manage categories and items through a simple web interface, with full CRUD functionality.
 
+This project is part of The Oding Project curriculum.
+
 ## Features
 - View all inventory categories
 - View items belonging to a category
@@ -33,3 +35,7 @@ Create and initialize the PostgreSQL database. It will be populated with pre-exi
 
 ## To Run the application
 npm run start
+
+## Credits
+
+Project idea and requirements: The Odin Project: https://www.theodinproject.com/
